@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<html>
+<head>
+
+<title>home</title>
+<style>
+    input[type=submit]{
+    background-color: black;
+    border: blue;
+    color: white;
+    padding: 20px 35px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  input[type=submit]:hover {
+    color: #04286e;
+  background: #000;
+  border: 1px solid #000;
+  }
+  body  {
+    background-image: url("/img/6.jpg");
+    background-color: #ece7e7;
+    height: 1600px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+  }
+  input[type=text], input[type=password] {
+    /*width: 100%;*/
+    padding: 10px 10px;
+    /* margin: 8px 0; */
+    /*display: inline-block;*/
+    /* border: 4px solid #ccc; */
+    /* box-sizing: border-box; */
+  }
+  
+  button[type=menu] {
+    background-color: rgb(14, 24, 177);
+    color: rgb(5, 5, 7);
+    padding: 20px 20px;
+    margin: 8px 0;
+    border: none;
+    align-self: center;
+    text-align: center;
+    background-position: center;
+    margin-left: 550px;
+  }
+  
+  </Style>
+  <script>
+  function formvalidate() {
+      if (document.myForm.name.value == "") {
+          alert("Enter a name");
+          document.myForm.name.focus();
+          return false;
+      }
+      if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+          alert("Invalid characters");
+          document.myForm.name.focus();
+          return false;
+      }
+  }
+  
+  </script><script type="text/javascript">
+           function inflation_add() {
+
+            var num1 = parseFloat(document.getElementById("p_cpi").value);
+            var num2= parseFloat(document.getElementById("c_cpi").value);
+            var result =((num2-num1)/num1)*100;
+
+            document.getElementById("inflation").value = result;
+        }
+		 function provident_add() {
+		 var res =((5/100)*15000);
+
+
+            document.getElementById("provident_fund").value = res;
+
+        }
+		
+		 function incometax_add() {
+
+var n1=parseFloat(document.getElementById("bs").value)
+var n2=parseFloat(document.getElementById("travelling_allowance").value)
+var n3=parseFloat(document.getElementById("house_rent").value)
+var n4=parseFloat(document.getElementById("provident_fund").value)
+var rests=(n1+n2+n3-n4)*(10/100);
+            document.getElementById("incometax").value = rests;
+
+        }
+		function final_add() {
+var num8=parseFloat(document.getElementById("bs").value);
+
+var num3=parseFloat(document.getElementById("inflation").value);
+var num4=parseFloat(document.getElementById("travelling_allowance").value);
+
+var num5=parseFloat(document.getElementById("house_rent").value);
+
+var num6=parseFloat(document.getElementById("provident_fund").value);
+var num7=parseFloat(document.getElementById("incometax").value);
+var rest=(num3/100)+num4+num5-num6-num7+num8;
+
+
+            document.getElementById("final_amount").value = rest;
+
+
+        }
+		
+        </script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  
+  <body style="font-size: 20px; text-decoration-color: cornsilk;">
+    <b>
+    <!-- <h3>Insert Employee Details! </h3> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/employee">EMPLOYEE <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/loan">LOAN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/salary">PAYMENTS</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  OPTIONS
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/s_insert">INSERT</a>
+                  <a class="dropdown-item" href="/s_delete">DELETE</a>
+                  <a class="dropdown-item" href="/s_view">VIEW</a>
+                  <a class="dropdown-item" href="/pay_search">SEARCH</a>
+                </div>
+              </li>
+            </ul>
+           
+          </div>
+        </nav>
+        <br><br><br><b><button type="menu">
+
+                  <% if (displays.length > 0) %>
+                  <table class="table table-hovered">
+                      <thead class="thead-dark" >
+                          <tr>
+                             
+                              <th scope="col">id</th>
+                             
+                               
+                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% displays.forEach((cust, index) => { %>
+                              <tr>
+                                 
+                                  <th scope="row"><%= cust.e_id %></th>
+                                 
+                                  
+      
+                                   
+                                  
+                              </tr>
+                          <% }) %>
+                      </tbody>
+                  </table>
+                  <br>
+                 <b> <h5>Enter the salary details</h5></b>
+            </div>    <form action='/addsalary' method='post'>
+                <div align="center">
+<form action="addsalary" method="post">
+	<table>
+	  
+  <tr><td>E_id</td>
+  <td>  <input placeholder="E_ID " type="text" name="e_id" id="e_id" required/></td></tr>
+  <tr><td>   BASIC SALARY </td>
+          <td>  <input placeholder="BASIC SALARY " type="text" id="bs" name="TextBox3" value="15000"></td></tr>
+          <tr><td>  Enter previous year cpi : </td>
+          <td>  <input placeholder="Enter previous year cpi " type="text" id="p_cpi" name="TextBox1"></td></tr>
+            
+          <tr><td>  Enter current year cpi : </td>
+          <td>  <input placeholder="Enter current year cpi " type="text" id="c_cpi" name="TextBox2"></td></tr>
+            
+        <tr><td> <input type="button" name="clickbtn" value="INFLATION" onclick="inflation_add()"></td>
+          <td>   <input type="text" id="inflation" name="TextBox4" ></td><td> % </td></tr>
+            
+
+  <tr><td>TRAVELLING ALLOWANCE</td>
+  <td>  <input placeholder="TRAVELLING ALLOWANCE " type="text" name="travelling_allowance" id="travelling_allowance" ></td></tr>
+  <tr><td>HOUSE RENT</td>
+  <td>  <input placeholder="HOUSE RENT" type="text" name="house_rent" id="house_rent" ></td></tr>
+  
+     <tr><td> <input type="button" name="clickbtn" value="PROVIDENT FUND" onclick="provident_add()"></td>
+
+  
+  <td>  <input type="text" name="provident_fund" id="provident_fund" required/></td></tr>
+  
+  
+          <tr> <td><input type="button" name="clickbtn" value="INCOMETAX" onclick="incometax_add()"></td>
+
+  <td>  <input type="text" name="incometax" id="incometax" required/></td></tr>
+
+  <tr><td>PAY DATE</td>
+  <td>  <input placeholder="PAY DATE" type="date" name="pay_date" id="pay_date" required/></td></tr>
+  
+     <tr><td> <input type="button" name="clickbtn" value="FINAL AMOUNT" onclick="final_add()"></td>
+  <td>  <input  type="text" name="final_amount" id="final_amount" ></td></tr>
+    <tr>   <td></td><td><input type="submit" name="login" value="PAY" ></td></tr>
+
+       
+		</table>
+    </form>
+    </button></b>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+		</html>

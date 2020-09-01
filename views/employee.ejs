@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+<style>
+
+
+.mar {
+ height: 50px;  
+ overflow: hidden;
+ position: relative;
+
+ border-color: #111;
+ color: rgb(6, 6, 7);
+ margin-top: 50px;
+ font-size: 50px;
+ font-style: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body  {
+  background-image: url("/img/9.jpg");
+  background-color: #050404;
+  height: 600px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 90px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04286e;
+}
+
+input.MyButton {
+/* width: 170px; */
+padding: 10px 80px;
+cursor: pointer;
+font-weight: bold;
+text-align: center;
+font-size: 30px;
+background: #04286e;
+color: #000;
+border: 1px solid #04286e;
+border-radius: 50%;
+margin: 10px 10px;
+display: inline-block;
+align-content: center;
+align-items: center;
+}
+input.MyButton:hover {
+color: #04286e;
+background: #000;
+border: 1px solid #000;
+}
+</style>
+</head>
+<body >
+    <b>
+        <ul>
+            <li><a class="active" href="#home">HOME</a></li>
+            <li><a   href="/employee">EMPLOYEE</a></li>
+            <li> <a  align="center" href="loan">LOANS</a></li>
+            <li><a  align="center" href="/salary">PAYMENTS</a></li>
+          </ul>
+       
+        <marquee class="mar" behavior="scroll" direction="right">MARINE WORKS PVT LTD</marquee>
+      </b>
+        <form>
+            <a href="/insert"><input class="MyButton" type="button" value="INSERT"></a>
+            <a href="/delete"><input class="MyButton" type="button" value="DELETE"></a>
+            <a href="/view"><input class="MyButton" type="button" value="VIEW"></a>
+            <a href="/update"><input class="MyButton" type="button" value="UPDATE"></a>
+            <a href="/search"><input class="MyButton" type="button" value="SEARCH"></a>
+            </form>      
+  <!-- <table>
+    <tr><td>
+    <div class="vert">
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li> <a  href='/employee'>EMPLOYEE</a></li>
+        <li><a  href="/loan">LOANS</a></li>
+        <li><a  href="/salary">PAYMENTS</a></li>
+      </ul>
+    </div></td>
+    <td></td><td></td><td></td><td></td><td></td>
+    <td style="align-self: top;"> 
+ <div class="topnav">
+   <ul>
+        <li><a href="/insert">INSERT</a></li>
+        <li><a href="/delete">DELETE</a></li>
+        <li><a href="/view">VIEW</a></li>
+        <li><a href="/update">UPDATE</a></li>
+        <li><a href="/search">SEARCH</a></li>
+      </ul>
+    </div> 
+    
+</td></tr>
+
+
+</table> -->
+  </body>
+  </html>
+

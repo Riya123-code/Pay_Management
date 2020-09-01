@@ -1,0 +1,125 @@
+<html>
+<head><style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.square{
+  text-align: center;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: white;
+  color: brown;
+}
+/*table, th , td {
+border: 1px solid grey;
+border-collapse: collapse;
+padding: 4px;
+font-family: arial;
+}*/
+th {
+background: darkblue;
+color: white;
+text-align: left;
+}
+   </style>
+                      
+      </head>
+      <body >
+          
+<table>
+
+              <tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+              <tr></tr> <tr></tr> <tr></tr> <tr><td>     <div class="topnav" text-align="center">
+                  <a  href='/employee'>EMPLOYEE DETAILS</a></td></tr><tr></tr>
+             <tr> <td>      <div class="topnav" text-align="center">
+                <a  href="/loan">LOANS</a></td></tr><tr></tr>
+              <tr>  <td>    <div class="topnav" text-align="center">
+                  <a  href="/salary">PAYMENTS</a></td></tr><tr></tr>
+    </div>
+                </table>
+                <div class="square"></div>
+            <div class="topnav" text-align="center">
+                   <a></a><a></a> <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a class="topnav
+                   
+                   " href="/insert">INSERT</a>
+                    <a href="/delete">DELETE</a>
+                    <a href="/view">VIEW</a>
+                    <a href="/update">UPDATE</a>
+
+            </centre>
+                  </div>
+                  <div align="center">
+                        <div class="container" ng-app = "payApp" ng-controller = "payCtrl">
+                                <b>  <div class="logo">.</div></b>
+                                  <div class="pay-item">
+          <div class="table">
+    
+
+
+        <% if (data.length > 0) %>
+            <table class="table table-hovered">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th scope="col">name</th>
+                        <th scope="col">age</th>
+                        <th scope="col">id</th>
+                        <th scope="col">address</th>
+                        <th scope="col">email</th>
+
+                       
+                         
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((cust, index) => { %>
+                        <tr>
+                            <th scope="row"><%= cust.e_name %></th>
+                            
+                            
+                            <th scope="row"><%= cust.e_age %></th>
+                            <th scope="row"><%= cust.e_id %></th>
+                            <th scope="row"><%= cust.e_address %></th>
+                            <th scope="row"><%= cust.e_email %></th>
+
+                           
+                            
+
+                             
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+       
+    </div>
+    </div>
+    </html>

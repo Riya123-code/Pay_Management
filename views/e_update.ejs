@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <style>
+    input[type=submit]{
+  background-color: black;
+  border: blue;
+  color: white;
+  padding: 20px 35px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  color: #04286e;
+background: #000;
+border: 1px solid #000;
+}
+body  {
+  background-image: url("/img/4.jpg");
+  background-color: #ece7e7;
+  height: 610px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  align-self: center;
+  text-align: center;
+}
+button[type=menu] {
+  background-color: rgb(14, 24, 177);
+  color: rgb(5, 5, 7);
+  padding: 20px 20px;
+  margin: 8px 30px;
+  border: none;
+  align-self: center;
+  text-align: center;
+  background-position: center;
+  margin-left: 580px;
+}
+
+</style><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="font-size: 20px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/employee">Employee Details <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/loan">Loan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/salary">Payments</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/insert">Insert</a>
+                <a class="dropdown-item" href="/delete">Delete</a>
+                <a class="dropdown-item" href="/view">View</a>
+                <a class="dropdown-item" href="/update">Update</a>
+              </div>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+    <br><br><br>
+<button type="menu">
+<div class="container">
+<h1>UPDATE EMPLOYEE DETAILS</h1>
+
+<form action="updated" method="post">
+
+<table> 
+<h6>Enter id whose details are to be updated</h6>
+<tr><td>E_ID</td>
+    <td>  <input placeholder="id " type="text" name="id" id="e_id"/></td></tr>
+  
+   
+      
+  
+  <tr>   <td></td><td><input type="submit" name="UPDATE" value="UPDATE" ></td></tr>
+
+</table>
+</form>
+</div>
+</button>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

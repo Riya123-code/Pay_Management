@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+<title>home</title>
+<Style>
+   .mar {
+ height: 70px;  
+ overflow: hidden;
+ position: relative;
+
+ border-color: #111;
+ color: rgb(6, 6, 7);
+ margin-top: 50px;
+ font-size: 50px;
+ font-style: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body  {
+  background-image: url("/img/9.jpg");
+  background-color: #050404;
+  height: 500px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 143px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04286e;
+}
+
+input.MyButton {
+/* width: 170px; */
+padding: 110px 90px;
+cursor: pointer;
+font-weight: bold;
+text-align: center;
+font-size: 30px;
+background: #04286e;
+color: #000;
+border: 1px solid #04286e;
+border-radius: 50%;
+margin: 140px 100px;
+display: inline-block;
+align-content: center;
+align-items: center;
+}
+input.MyButton:hover {
+color: #04286e;
+background: #000;
+border: 1px solid #000;
+}
+</style>
+  <!-- <script>
+  function formvalidate() {
+      if (document.myForm.name.value == "") {
+          alert("Enter a name");
+          document.myForm.name.focus();
+          return false;
+      }
+      if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+          alert("Invalid characters");
+          document.myForm.name.focus();
+          return false;
+      }
+  }
+  
+  </script> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  
+  
+        <body >
+            <b>
+                <ul>
+                    <li><a class="active" href="#home">HOME</a></li>
+                    <li><a   href="/employee">EMPLOYEE</a></li>
+                    <li> <a  align="center" href="loan">LOANS</a></li>
+                    <li><a  align="center" href="/salary">PAYMENTS</a></li>
+                  </ul>
+               
+                <marquee class="mar" behavior="scroll" direction="right">MARINE WORKS PVT LTD</marquee>
+              </b>
+                <form>
+                    <a href="/S_insert"><input class="MyButton" type="button" value="INSERT"></a>
+            <a href="/S_delete"><input class="MyButton" type="button" value="DELETE"></a>
+            <a href="/S_view"><input class="MyButton" type="button" value="VIEW"></a>
+            <!-- <a href="/pay_search"><input class="MyButton" type="button" value="SEARCH"></a> -->
+            </form>       
+      
+<!-- <div class="topnav" align="center">
+    <a></a><a></a> <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a> <a class="topnav" href="/s_insert">INSERT</a>
+  <a href="/s_delete">DELETE</a>
+  <a href="/s_view">VIEW</a>
+  <a href="/pay_search">SEARCH</a>
+
+
+</div> -->
+<div align="center">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+  </html>
+

@@ -1,0 +1,130 @@
+<html>
+    <style>
+        input[type=submit]{
+        background-color: black;
+        border: blue;
+        color: white;
+        padding: 20px 35px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      input[type=submit]:hover {
+        color: #04286e;
+      background: #000;
+      border: 1px solid #000;
+      }
+      body  {
+        background-image: url("/img/6.jpg");
+        background-color: #ece7e7;
+        height: 600px;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; 
+      }
+      
+      button[type=menu] {
+        background-color: rgb(14, 24, 177);
+        color: rgb(5, 5, 7);
+        padding: 20px 20px;
+        margin: 8px 0;
+        border: none;
+        align-self: center;
+        text-align: center;
+        background-position: center;
+        margin-left: 180px;
+      }
+      
+      </Style>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body style="font-size: 20px; text-decoration-color: cornsilk;">
+        <b>
+        <!-- <h3>Insert Employee Details! </h3> -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/employee">EMPLOYEE <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/loan">LOAN</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/salary">PAYMENTS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      OPTIONS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/s_insert">INSERT</a>
+                      <a class="dropdown-item" href="/s_delete">DELETE</a>
+                      <a class="dropdown-item" href="/s_view">VIEW</a>
+                      <a class="dropdown-item" href="/pay_search">SEARCH</a>
+                    </div>
+                  </li>
+                </ul>
+               
+              </div>
+            </nav>
+            <br><br><br><b><button type="menu">
+              <h3>SALARY DETAILS</h3>
+          <div class="table">
+    
+
+
+        <% if (s_view.length > 0) %>
+            <table class="table table-hovered">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th scope="col">BSID</th>
+                        <th scope="col">E_ID</th>
+                        <th scope="col">BASIC SALARY</th>
+
+                        <th scope="col">INFLATION</th>
+                        <th scope="col">TRAVELLING ALLOWANCE</th>
+                        <th scope="col">HOUSE RENT</th>
+                        <th scope="col">PROVIDENT FUND</th>
+                        <th scope="col">INCOMETAX</th>
+                        <th scope="col">PAY DATE</th>
+                        <th scope="col">FINAL AMOUNT</th>
+
+                       
+                         
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% s_view.forEach((cust, index) => { %>
+                        <tr>
+                            <th scope="row"><%= cust.bsid %></th>
+                            
+                            
+                            <th scope="row"><%= cust.e_id %></th>
+                            <th scope="row"><%= cust.basic_salary %></th>
+                            <th scope="row"><%= cust.inflation %></th>
+                            <th scope="row"><%= cust.travelling_allowance %></th>
+                            <th scope="row"><%= cust.house_rent %></th>
+                            <th scope="row"><%= cust.provident_fund %></th>
+                            <th scope="row"><%= cust.incometax %></th>
+                            <th scope="row"><%= new Date(cust.pay_date).getDate() %>-<%= new Date(cust.pay_date).getMonth() %>-<%= new Date(cust.pay_date).getFullYear() %></th>
+                            <th scope="row"><%= cust.final_amount %></th>
+
+                            
+
+                             
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+       
+    </div>
+</div>
+</div></button></b>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

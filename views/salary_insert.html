@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<html>
+<head>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+
+  background-image: url("image.jpg");
+
+
+  height: 100%; 
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: white;
+  color: brown;
+}
+
+
+</style>
+
+
+<script type="text/javascript">
+           function inflation_add() {
+
+            var num1 = parseFloat(document.getElementById("p_cpi").value);
+            var num2= parseFloat(document.getElementById("c_cpi").value);
+            var result =((num2-num1)/num1)*100;
+
+            document.getElementById("inflation").value = result;
+        }
+		 function provident_add() {
+		 var res =((5/100)*15000);
+
+
+            document.getElementById("provident_fund").value = res;
+
+        }
+		
+		 function incometax_add() {
+
+var n1=parseFloat(document.getElementById("bs").value)
+var n2=parseFloat(document.getElementById("travelling_allowance").value)
+var n3=parseFloat(document.getElementById("house_rent").value)
+var n4=parseFloat(document.getElementById("provident_fund").value)
+var rests=(n1+n2+n3-n4)*(10/100);
+            document.getElementById("incometax").value = rests;
+
+        }
+		function final_add() {
+var num8=parseFloat(document.getElementById("bs").value);
+
+var num3=parseFloat(document.getElementById("inflation").value);
+var num4=parseFloat(document.getElementById("travelling_allowance").value);
+
+var num5=parseFloat(document.getElementById("house_rent").value);
+
+var num6=parseFloat(document.getElementById("provident_fund").value);
+var num7=parseFloat(document.getElementById("incometax").value);
+var rest=(num3/100)+num4+num5-num6-num7+num8;
+
+
+            document.getElementById("final_amount").value = rest;
+
+
+        }
+		
+        </script>
+		</head>
+        <body class="bg">
+            <div class="topnav" align="center">
+              <a class="active" href="/s_insert">INSERT</a>
+              <a href="/s_delete">DELETE</a>
+              <a href="/s_view">VIEW</a>
+            </div>    <form>
+	<table>
+	  <tr><td>BSID</td>
+  <td>  <input placeholder="bsid " type="text" name="bsid" id="bsid" required/></td></tr>
+  <tr><td>E_id</td>
+  <td>  <input placeholder="E_ID " type="text" name="e_id" id="e_id" required/></td></tr>
+  <tr><td>   BASIC SALARY </td>
+          <td>  <input placeholder="BASIC SALARY " type="text" id="bs" name="TextBox3" value="15000"></td></tr>
+          <tr><td>  Enter previous year cpi : </td>
+          <td>  <input placeholder="Enter previous year cpi " type="text" id="p_cpi" name="TextBox1"></td></tr>
+            
+          <tr><td>  Enter current year cpi : </td>
+          <td>  <input placeholder="Enter current year cpi " type="text" id="c_cpi" name="TextBox2"></td></tr>
+            
+        <tr><td> <input type="button" name="clickbtn" value="INFLATION" onclick="inflation_add()"></td>
+          <td>   <input type="text" id="inflation" name="TextBox4" ></td><td> % </td></tr>
+            
+
+  <tr><td>TRAVELLING ALLOWANCE</td>
+  <td>  <input placeholder="TRAVELLING ALLOWANCE " type="text" name="travelling_allowance" id="travelling_allowance" required/></td></tr>
+  <tr><td>HOUSE RENT</td>
+  <td>  <input placeholder="HOUSE RENT" type="text" name="house_rent" id="house_rent" required/></td></tr>
+  
+     <tr><td> <input type="button" name="clickbtn" value="PROVIDENT FUND" onclick="provident_add()"></td>
+
+  
+  <td>  <input type="text" name="provident_fund" id="provident_fund" required/></td></tr>
+  
+  
+          <tr> <td><input type="button" name="clickbtn" value="INCOMETAX" onclick="incometax_add()"></td>
+
+  <td>  <input type="text" name="incometax" id="incometax" required/></td></tr>
+
+  <tr><td>PAY DATE</td>
+  <td>  <input placeholder="PAY DATE" type="date" name="pay_date" id="pay_date" required/></td></tr>
+  
+     <tr><td> <input type="button" name="clickbtn" value="FINAL AMOUNT" onclick="final_add()"></td>
+  <td>  <input  type="text" name="final_amount" id="final_amount" ></td></tr>
+    <tr>   <td></td><td><input type="submit" name="login" value="PAY" ></td></tr>
+
+       
+		</table>
+		</form>
+		</body>
+		</html>

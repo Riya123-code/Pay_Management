@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+<Style>
+  input[type=submit]{
+  background-color: black;
+  border: blue;
+  color: white;
+  padding: 20px 35px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  color: #04286e;
+background: #000;
+border: 1px solid #000;
+}
+body  {
+  background-image: url("/img/4.jpg");
+  background-color: #ece7e7;
+  height: 610px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+input[type=text], input[type=password] {
+  /*width: 100%;*/
+  padding: 10px 10px;
+  /* margin: 8px 0; */
+  /*display: inline-block;*/
+  /* border: 4px solid #ccc; */
+  /* box-sizing: border-box; */
+}
+
+button[type=menu] {
+  background-color: rgb(14, 24, 177);
+  color: rgb(5, 5, 7);
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  align-self: center;
+  text-align: center;
+  background-position: center;
+  margin-left: 600px;
+}
+
+</Style>
+<!-- <script>
+function formvalidate() {
+    if (document.myForm.name.value == "") {
+        alert("Enter a name");
+        document.myForm.name.focus();
+        return false;
+    }
+    if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+        alert("Invalid characters");
+        document.myForm.name.focus();
+        return false;
+    }
+}
+
+</script> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="font-size: 20px; text-decoration-color: cornsilk;">
+  <b>
+  <!-- <h3>Insert Employee Details! </h3> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/employee">EMPLOYEE <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/loan">LOAN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/salary">PAYMENTS</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OPTIONS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/insert">INSERT</a>
+                <a class="dropdown-item" href="/delete">DELETE</a>
+                <a class="dropdown-item" href="/view">VIEW</a>
+                <a class="dropdown-item" href="/update">UPDATE</a>
+                <a class="dropdown-item" href="/search">SEARCH</a>
+              </div>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+      <br><br><br>
+<button type="menu">
+<div align="center">
+<div class="container" ng-app = "payApp" ng-controller = "payCtrl">
+  <b>  <div class="logo" style="text-decoration-color: cornsilk;">INSERT EMPLOYEE DETAILS</div></b>
+    <div class="pay-item">
+      <% if (error.length > 0) { %>
+
+          <%= error[0].msg %>
+          <% } %>
+<!-- <form name="myform" action='/addemployee' method='post' onsubmit="return formvalidate()"> 
+E_NAME
+    <input  placeholder="name " type="text" name="name" id="nameid" value="<%= data.name %>" required/></tr>
+
+   E_AGE
+    <input placeholder="age" type="number" name="age" id="ageid" value="<%= data.age %>" required/></tr>
+  
+  
+
+E_ADDRESS
+    <input placeholder="address " type="text" name="address" id="addressid" value="<%= data.address %>" required/></tr>
+  EMAIL
+      <input placeholder="email " type="text" name="email" id="email" value="<%= data.email %>"/></tr>
+  
+     <input type="submit" name="login" value="login" ng-disabled="loginform.$invalid"></tr>
+
+</form> -->
+<form name="myform" action='/addemployee' method='post' onsubmit="return formvalidate()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">EMPLOYEE NAME</label>
+      <input class="form-control" placeholder="name " type="text" name="name" id="nameid" value="<%= data.name %>" required/>
+
+   
+      <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group" >
+      <label for="exampleInputPassword1">EMPLOYEE AGE</label>
+      <input class="form-control" placeholder="age" type="number" name="age" id="ageid" value="<%= data.age %>" required/>
+      <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">EMPLOYEE ADDRESS</label>
+        <input class="form-control"placeholder="address " type="text" name="address" id="addressid" value="<%= data.address %>" required/>
+      </div>
+      <div class="form-group">
+          <label for="exampleInputPassword1">EMAIL ID</label>
+          <input class="form-control"placeholder="email " type="text" name="email" id="email" value="<%= data.email %>"/>
+        </div>
+        <input type="submit" name="login" value="INSERT" ng-disabled="loginform.$invalid">
+ 
+  </form>
+</b>
+</button>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
